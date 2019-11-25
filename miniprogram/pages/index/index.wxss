@@ -1,0 +1,34 @@
+.container-top{
+    padding: 20rpx 20rpx;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.container-top .user-head{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.container-top .createActivity{
+    font-size: 60rpx;
+}
+
+.container-mid{
+    padding: 20rpx 20rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+
+}
+
+.container-mid .recentActivity{
+    margin-top: 10rpx;
+    font-size: 45rpx;
+}
+
+.container-mid .container-act{
+  padding: 20rpx 40rpx;
+  border-bottom: 1px solid #e4e4e4;
+}

@@ -1,0 +1,34 @@
+<wxs src="../../utils/util.wxs" module="util" />
+
+<view class="container-top">
+   <image class='user-head' src='/images/user-unlogin.png'></image>
+   <navigator class='createActivity' url="/pages/create/create">+</navigator>
+</view>
+<view class='container-mid' >
+   <view class='recentActivity'>我最近的日程</view>
+    <view class="container-act"wx:for="{{activities}}" wx:key="{{activities._id}}" wx:for-item="Activities">
+      <view class='act-schema'>活动主题：{{Activities.A_Schema}}</view>
+      <view class='act-time'>活动时间：{{Activities.A_Time.A_StartTime}}</view>
+      <view class="act-location">活动地点：{{Activities.A_Location}}</view>
+   </view>  
+    <!-- <view class="container-act">
+      <view class='act-schema'>活动主题：班会</view>
+      <view class='act-time'>活动时间：2019-07-20 15：27：12</view>
+      <view class="act-location">活动地点：北京邮电大学教三339</view>
+   </view>
+    <view class="container-act">
+      <view class='act-schema'>活动主题：聚会</view>
+      <view class='act-time'>活动时间：2019-07-22 16：34：28</view>
+      <view class="act-location">活动地点：北京</view>
+      </view>
+       <view class="container-act">
+      <view class='act-schema'>活动主题：会议</view>
+      <view class='act-time'>活动时间：2019-07-20 17：33：25</view>
+      <view class="act-location">活动地点：上海</view>
+      </view>
+       <view class="container-act">
+      <view class='act-schema'>活动主题：六级考试</view>
+      <view class='act-time'>活动时间：2019-06-15 09：30：00</view>
+      <view class="act-location">活动地点：北京邮电大学</view>
+   </view>  -->
+</view>
