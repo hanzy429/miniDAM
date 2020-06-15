@@ -1,1 +1,57 @@
-/* miniprogram/pages/create/create.wxss */
+page{
+  height: 1400rpx;
+}
+.container-top{
+background-color: #f6f6f6;
+}
+.back{
+  margin-left: 30rpx;
+  margin-bottom: 20rpx;
+    width: 50rpx;
+    height: 50rpx;
+}
+.user-head{  
+  margin-left: 550rpx;
+  margin-top: 30rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.content{
+  margin-top: 30rpx;
+}
+.content-wrap{
+  height: 60rpx;
+  margin:120rpx;
+  text-align: center;
+}
+.content-wrap view{
+ text-align: center;
+}
+.inputtext{
+  margin: 25rpx;
+  font-size: 30rpx;
+  height: 60rpx;
+  width: 500rpx;
+  border: 2rpx;
+  border-style:solid;
+  border-color:#f6f6f6; 
+  border-radius: 20px;
+  text-align: center;
+}
+.map{
+  display: block;
+  margin: 25rpx auto;
+  width: 60rpx;
+  height: 60rpx;
+}
+.submit{
+  height:70rpx;
+  width: 210rpx;
+  border: 2rpx;
+  border-style:solid;
+  border-color:#f6f6f6; 
+  border-radius: 20px;
+  background-color: #00b26a;
+  line-height: 70rpx;
+  font-size: 36rpx;
+}

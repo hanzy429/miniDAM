@@ -104,10 +104,10 @@ Page({
     })
     this.dateInit(year, month);
   },
+
   onShowDate:function(event){
+    this.set
     var datenum = event.currentTarget.dataset;
     console.log(datenum);
   }
 })
-
- 

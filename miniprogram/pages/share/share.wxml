@@ -1,0 +1,25 @@
+<wxs src="../../utils/util.wxs" module="util" />
+
+<view class='header'>
+  <view class="header-details">这是一个来自 </view>
+  <image src="../../images/user-unlogin.png" class="userhead-mini"></image>
+  <view class="header-details"> 发起的投票</view>
+</view>
+<view class="container-act" wx:for-item="Activities">
+      <view class='act-schema'>活动主题：{{Activities.A_Schema}}</view>
+      <view class='act-date'>活动日期：{{Activities.A_StartDate}}</view>
+      <view class='act-time'>活动时间：{{Activities.A_StartTime}}</view>
+      <view class="act-location">活动地点：{{Activities.A_Location}}</view>
+   </view>  
+ <view class="topic">活动主题</view>
+
+<view class="detail">
+  <view class="details"style="border-right:1rpx solid #f0f0f0;">
+    <view class="detailss" style="background-color:" >活动时间</view>
+  </view>
+  <view class="details">
+    <view class="detailss">活动地点</view>
+  </view>
+</view>
+
+<button class="submit">确认</button>

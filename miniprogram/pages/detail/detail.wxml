@@ -1,11 +1,5 @@
-<wxs src="../../utils/util.wxs" module="util" />
-
-<view class="container-top">
-   <image class='user-head' src='/images/user-unlogin.png'></image>
-   <navigator class='createActivity' url="/pages/create/create">+</navigator>
-</view>
-<view class='container-mid' >
-   <view class='recentActivity'>我最近的日程</view>
+<view class='container-top' >
+   <view class='ActivityOnSDate'>{{year}}年{{month}}月{{dateNum}}号的活动安排</view>
     <view class="container-act"wx:for="{{activities}}" wx:key="{{activities._id}}" wx:for-item="Activities">
       <view class='act-schema'>活动主题：{{Activities.A_Schema}}</view>
       <view class='act-date'>活动日期：{{Activities.A_StartDate}}</view>

@@ -15,8 +15,8 @@
     </view>
     <view class='date-box'>
         <view wx:for='{{dateArr}}'  wx:key="{{dateArr.index}}" class='{{isToday == item.isToday ? "nowDay" : ""}}' data-date='{{item.isToday}}'>            
-            <view class='date-head' bindtap='onShowDate' data-dateNum='{{item.dateNum}}' data-year='{{item.year}}' data-month='{{item.month}}'>
-                <view>{{item.dateNum}}</view>
+            <view class='date-head'  bindtap='onShowDate' data-dateNum='{{item.dateNum}}' data-year='{{item.year}}' data-month='{{item.month}}'>
+                <navigator url="/pages/detail/detail?dateNum={{item.dateNum}}&month={{item.month}}&year={{item.year}}">{{item.dateNum}}</navigator> 
             </view>
             
         </view>
