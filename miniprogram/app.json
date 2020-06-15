@@ -13,6 +13,8 @@
     "navigationBarBackgroundColor": "#41be57",
     "navigationBarTitleText": "日常活动管理",
     "navigationBarTextStyle": "white"
+ 
+
   },
   "tabBar": {
     "color": "#CDCDCD",
