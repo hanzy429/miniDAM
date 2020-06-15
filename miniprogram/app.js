@@ -12,8 +12,9 @@ App({
 
     this.globalData = {
       openid:'1',
+      joinactid:''
     }
     
-  },
-
+  }
+  
 })

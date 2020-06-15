@@ -97,7 +97,7 @@ Page({
   })
   },
   onShareAppMessage: function () {
-    // console.log(this.data.shareId)
+    console.log('ttt',this.data.shareId)
     return {
       title: '发送给好友',
       path: 'pages/share/share?aid='+this.data.shareId,

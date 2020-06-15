@@ -43,4 +43,5 @@
     </picker>
   </view>
 </view>
-<button class="submit"  bindtap="addData" open-type="share">确认</button>
+<button class="submit"  bindtap="addData" >确认</button>
+<button class="submit"  open-type="share">分享</button>
