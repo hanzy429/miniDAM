@@ -15,9 +15,9 @@ Page({
     wx.cloud.callFunction({
       name: 'login',
       complete: res => {
-        console.log('callFunction test result: ', res)
+        // console.log('callFunction test result: ', res)
         app.globalData.openid = res.result.openid
-        console.log('tt', app.globalData.openid);
+        // console.log('tt', app.globalData.openid)
         this.read()
       }
     })
@@ -28,7 +28,7 @@ Page({
       A_Participate: app.globalData.openid
     }).orderBy('A_StartDate', 'asc').orderBy('A_StartTime','asc').get().then(res => {
       const activities = res.data;
-      console.log(activities);
+      // console.log(activities);
       that.setData({
         activities: activities
       })

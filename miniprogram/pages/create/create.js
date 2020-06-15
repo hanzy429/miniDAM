@@ -7,9 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+      shareId:"",
       theme:null,
       location:null,
-      
       num:null,
       array: ['1', '2', '3', '4','5','6'],
       index:0,
@@ -31,19 +31,16 @@ Page({
     this.setData({
       theme:event.detail.value
     });
-    console.log(this.data.theme)
   },
   getPeopleNum:function(event){
     this.setData({
       num:event.detail.value
     });
-    console.log(this.data.num)
   },
   getLocation: function (event) {
     this.setData({
       location: event.detail.value
     });
-    console.log(this.data.location)
   },
   yincangtupian1:function(event){
     this.setData({
@@ -64,19 +61,19 @@ Page({
     })
   },
   bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value
     })
   },
   bindDateChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value
     })
   },
   bindTimeChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       time: e.detail.value
     })
@@ -95,22 +92,18 @@ Page({
     },
     success: function (res) {
       // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
-      console.log(res)
+      this.setData({
+        shareId:res._id
+      })
     }
   })
   },
-  onShareAppMessage: function (res) {
-    console.log(res._id)
-    console.log(res)
-    var aid
-    this.setData({
-      aid:res._id
-    })
+  onShareAppMessage: function () {
+    console.log(this.data.shareId)
     return {
       title: '发送给好友',
-      path: 'pages/share/share?aid='+this.data.aid,
+      path: 'pages/share/share?aid='+this.data.shareId,
       imageUrl: '/images/user-unlogin.png'
-      
     }
   }
 })
