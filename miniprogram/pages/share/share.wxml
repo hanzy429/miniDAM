@@ -22,4 +22,4 @@
   </view>
 </view>
 
-<button class="submit">确认</button>
+<button class="submit" bindtap="addData">确认</button>
