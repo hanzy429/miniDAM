@@ -26,7 +26,8 @@ Page({
     var specificDate=y+"-"+m+"-"+d;
     //console.log(month); 
     db.collection("Activities").where({
-      A_StartDate: specificDate
+      A_StartDate: specificDate,
+      A_Participate: app.globalData.openid
     }).get().then(res => {
       const activities = res.data;
       that.setData({

@@ -24,7 +24,6 @@ Page({
   },
   read:function(){
     const that = this;
-    console.log('11', app.globalData.openid);
     db.collection("Activities").where({
       A_Participate: app.globalData.openid
     }).orderBy('A_StartDate', 'asc').orderBy('A_StartTime','asc').get().then(res => {
