@@ -26,7 +26,7 @@ Page({
     const that = this;
     console.log('11', app.globalData.openid);
     db.collection("Activities").where({
-      _openid: app.globalData.openid
+      A_Participate: app.globalData.openid
     }).orderBy('A_StartDate', 'asc').orderBy('A_StartTime','asc').get().then(res => {
       const activities = res.data;
       console.log(activities);

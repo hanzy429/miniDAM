@@ -1,4 +1,5 @@
 // miniprogram/pages/create/create.js
+const app = getApp()
 const db = wx.cloud.database()
 Page({
 
@@ -88,7 +89,9 @@ Page({
       A_Schema: this.data.theme,
       A_Location: this.data.location,
       A_StartDate:this.data.date,
-      A_StartTime:this.data.time
+      A_StartTime:this.data.time,
+      A_Create:app.globalData.openid,
+      A_Participate: app.globalData.openid
     },
     success: function (res) {
       // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
