@@ -3,9 +3,6 @@ const app = getApp()
 const db = wx.cloud.database()
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
       shareId:"",
       theme:null,
@@ -90,16 +87,17 @@ Page({
       A_Create:app.globalData.openid,
       A_Participate: app.globalData.openid
     },
-    success: function (res) {
+    success:res=> {
       // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
       this.setData({
         shareId:res._id
       })
+      console.log(this.data.shareId)
     }
   })
   },
   onShareAppMessage: function () {
-    console.log(this.data.shareId)
+    // console.log(this.data.shareId)
     return {
       title: '发送给好友',
       path: 'pages/share/share?aid='+this.data.shareId,
