@@ -23,9 +23,23 @@ Page({
     })
   },
   read:function(){
+    let nowdate = new Date();
+    let year = nowdate.getFullYear();
+    let month = nowdate.getMonth() + 1;
+    let day = nowdate.getDate();
+    if (month < 10){
+      month = "0" + month;
+    }
+    if (day < 10){
+      day = "0" + day;
+    }
+    let now = year + "-" + month + "-" + day;
+    console.log(now);
+    const _ = db.command;
     const that = this;
     db.collection("Activities").where({
-      A_Participate: app.globalData.openid
+      A_Participate: app.globalData.openid,
+      A_StartDate: _.gte(now),
     }).orderBy('A_StartDate', 'asc').orderBy('A_StartTime','asc').get().then(res => {
       const activities = res.data;
       // console.log(activities);
