@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+   peoplecount:0
   },
 
   /**
@@ -24,6 +24,7 @@ Page({
         // console.log('callFunction test result: ', res)
         app.globalData.openid = res.result.openid
         console.log('tt', app.globalData.openid)
+        this.countpeople()        
         this.read()
       }
     })
@@ -39,6 +40,19 @@ Page({
       that.setData({
         activities: activities
       })
+    })
+    
+  },
+  countpeople:function(){
+    const that = this;
+    db.collection("Activities").where({
+      A_Activityid: app.globalData.joinactid // 填入当前用户 openid
+    }).count().then(res => {
+      console.log(res.total)
+      that.data.peoplecount = res.total+1
+      const count=that.data.peoplecount
+      console.log('ttt',count)
+
     })
   },
   addData:function(){
