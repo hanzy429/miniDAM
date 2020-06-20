@@ -9,20 +9,11 @@
   </view>
   <view class = "content-wrap">
     <view>活动人数上限</view>
-    <input placeholder="请填写阿拉伯数字" class="inputtext" bindinput='getPeopleNum'/>
+    <input type="number" placeholder="请填写阿拉伯数字" class="inputtext" bindinput='getPeopleNum'/>
   </view>
    <view class = "content-wrap">
     <view>活动地点</view>
     <input placeholder="请填写活动地点" class="inputtext" bindinput='getLocation'/>
-  </view>
-  <view class = "content-wrap">
-    <view>循环发布次数</view>
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-      <image class='map' src='/images/choose.png' hidden="{{isEHidden}}" bindtap='yincangtupian3'></image>
-      <view class="picker" hidden="{{isFHidden}}">
-       当前选择循环次数: {{array[index]}}
-      </view>
-    </picker>
   </view>
   <view class = "content-wrap">
     <view>活动日期</view>

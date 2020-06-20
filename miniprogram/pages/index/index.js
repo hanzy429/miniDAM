@@ -34,7 +34,6 @@ Page({
       day = "0" + day;
     }
     let now = year + "-" + month + "-" + day;
-    console.log(now);
     const _ = db.command;
     const that = this;
     db.collection("Activities").where({

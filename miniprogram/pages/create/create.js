@@ -8,8 +8,6 @@ Page({
       theme:null,
       location:null,
       num:null,
-      array: ['1', '2', '3', '4','5','6'],
-      index:0,
       date:'',
       time:'',
       isAHidden:false,
@@ -30,9 +28,19 @@ Page({
     });
   },
   getPeopleNum:function(event){
-    this.setData({
-      num:event.detail.value
-    });
+    let value = event.detail.value;
+    if (!(/(^[0-9]*$)/.test(value))){
+      wx.showToast({
+        title: '请输入数字',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+    else{
+      this.setData({
+        num:value
+      });
+    }
   },
   getLocation: function (event) {
     this.setData({
@@ -57,12 +65,6 @@ Page({
       isFHidden: false
     })
   },
-  bindPickerChange: function (e) {
-    // console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      index: e.detail.value
-    })
-  },
   bindDateChange: function (e) {
     // console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
@@ -76,25 +78,63 @@ Page({
     })
   }, 
   addData: function(){
-    db.collection('Activities').add({
-    // data 字段表示需新增的 JSON 数据
-    data: {
-      //_id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
-      A_Schema: this.data.theme,
-      A_Location: this.data.location,
-      A_StartDate:this.data.date,
-      A_StartTime:this.data.time,
-      A_Create:app.globalData.openid,
-      A_Participate: app.globalData.openid
-    },
-    success:res=> {
-      // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
-      this.setData({
-        shareId:res._id
+    console.log(this.data.date);
+    if (this.data.theme == null){
+      wx.showToast({
+        title: '请填写活动主题',
+        icon: 'none',
+        duration: 2000
       })
-      console.log(this.data.shareId)
     }
-  })
+    else if (this.data.num == null){
+      wx.showToast({
+        title: '请填写活动人数上限',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+    else if (this.data.location == null){
+      wx.showToast({
+        title: '请填写活动地点',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+    else if (this.data.date == ''){
+      wx.showToast({
+        title: '请选择活动日期',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+    else if (this.data.time == ''){
+      wx.showToast({
+        title: '请选择活动时间',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+    else{
+        db.collection('Activities').add({
+        // data 字段表示需新增的 JSON 数据
+        data: {
+          //_id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
+          A_Schema: this.data.theme,
+          A_Location: this.data.location,
+          A_StartDate:this.data.date,
+          A_StartTime:this.data.time,
+          A_Create:app.globalData.openid,
+          A_Participate: app.globalData.openid
+        },
+        success:res=> {
+          // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+          this.setData({
+            shareId:res._id
+          })
+          console.log(this.data.shareId)
+        }
+      })
+  }
   },
   onShareAppMessage: function () {
     console.log('ttt',this.data.shareId)
