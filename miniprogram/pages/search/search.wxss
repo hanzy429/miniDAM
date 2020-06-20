@@ -1,0 +1,162 @@
+/* miniprogram/pages/participantActivities/participantActivities.wxss */
+
+.title{
+    width:100%;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.search-title{  
+    width:100%;
+    margin-left:10px;
+}
+
+.condition-part{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+
+.condition-part .name{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    margin-top:4px;
+    margin-bottom:4px;
+}
+
+.condition-part .name .name-title{
+    
+    margin-left:10px;
+}
+
+.condition-part .name .name-input{
+    margin-left:10px;
+    border-bottom:1px solid #E6E6E6;
+}
+
+.condition-part .position{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    margin-top:4px;
+    margin-bottom:4px;
+}
+
+.condition-part .position .position-title{
+    
+    margin-left:10px;
+}
+
+.condition-part .position .position-input{
+    margin-left:10px;
+    border-bottom:1px solid #E6E6E6;
+}
+
+
+
+.condition-part .date{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+
+.condition-part .date .start{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right:1px solid #E6E6E6;
+}
+
+.condition-part .date .start .title1{
+    width:100%;
+    text-align:center;
+}
+
+.condition-part .date .start .icon{
+    margin-top:2px;
+    width:20px;
+    height:20px
+}
+.condition-part .date .start .show{
+    margin-top:2px;
+}
+
+.condition-part .date .end{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.condition-part .date .end .title1{
+    width:100%;
+    text-align:center;
+}
+
+.condition-part .date .end .icon{
+    margin-top:2px;
+    width:20px;
+    height:20px
+}
+.condition-part .date .end .show{
+    margin-top:2px;
+}
+
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+
+
+
+
+
+
+
+
+
+
+.container-mid{
+    width:100%;
+    margin-top:4px;
+
+}
+
+.container-mid .container-act{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #F7F7F7;
+    margin-bottom:10px;
+    border-bottom:1px solid #E6E6E6;
+}
+
+.container-mid .container-act .row{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top:2px;
+    margin-bottom:2px;
+}
+
+.container-mid .container-act .row .row-title{
+    width:50%;
+    text-align:center;
+}
+
+.container-mid .container-act .row .row-content{
+    width:50%;
+}
+
+.no-result{
+    margin-top:20px;
+    width:100%;
+    text-align:center;
+}

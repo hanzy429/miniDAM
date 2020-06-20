@@ -1,0 +1,64 @@
+<!--miniprogram/pages/search/search.wxml-->
+<view class="title">历史活动</view>
+<view class="search-title">搜索条件</view>
+<view class="condition-part">
+  <view class="name">
+    <view class="name-title">主题</view>
+    <input placeholder="{{placeholderName}}" class="name-input" bindinput='getName' value='{{name}}' />
+  </view>
+</view>
+<view class="condition-part">
+  <view class="position">
+    <view class="position-title">地点</view>
+    <input placeholder="{{placeholderPosition}}" class="position-input" bindinput='getPosition' value='{{position}}'/>
+  </view>
+</view>
+<view class="condition-part">
+  <view class="date">
+    <view class="start">
+    <view class="title1">起始日期</view>
+    <picker mode="date" value="{{startDate}}" start="" end="2099-12-31" bindchange="startDateChange">
+      <image class='icon' style="width:20px;height:20px" src='/images/choose.png' hidden="{{isAHidden}}" bindtap='yincangtupian1'></image>
+    </picker>
+    <view class="show" wx:if="{{startDate!=''}}">
+     {{startDate}}
+    </view>
+  </view>
+   <view class="end">
+     <view class="title1">结束日期</view>
+     <picker mode="date" value="{{endDate}}" start="" end="2099-12-31" bindchange="endDateChange">
+       <image class='icon' style="width:20px;height:20px" src='/images/choose.png' hidden="{{isAHidden}}" bindtap='yincangtupian1'></image>
+     </picker>
+      <view class="show" wx:if="{{endDate!=''}}">
+       {{endDate}}
+       </view>
+   </view>
+  </view>
+</view>
+<view class="button">
+  <button bindtap="qurey">确认</button>
+  <button bindtap="clear">重置</button>
+</view>
+    
+
+<view class='container-mid' wx:if="{{flag}}">
+    <view class="container-act"wx:for="{{result}}" wx:key="{{result._id}}" wx:for-item="Activities">
+      <view class="row">
+        <view class='row-title'>活动主题</view>
+        <view class='row-content'>{{Activities.A_Schema}}</view>
+      </view>
+      <view class="row">
+        <view class='row-title'>活动日期</view>
+        <view class='row-content'>{{Activities.A_StartDate}}</view>
+      </view>
+      <view class="row">
+        <view class='row-title'>活动时间</view>
+        <view class='row-content'>{{Activities.A_StartTime}}</view>
+      </view>
+      <view class="row">
+        <view class='row-title'>活动地点</view>
+        <view class='row-content'>{{Activities.A_Location}}</view>  
+      </view>          
+   </view>  
+</view>
+<view class='no-result' wx:if="{{!flag}}">暂无查询结果</view>

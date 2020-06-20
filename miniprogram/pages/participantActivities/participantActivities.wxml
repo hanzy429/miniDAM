@@ -1,0 +1,26 @@
+<!--miniprogram/pages/participantActivities/participantActivities.wxml-->
+<view class="title">我参与的活动</view>
+<view class='container-mid' >
+    <view class="container-act"wx:for="{{result}}" wx:key="{{result._id}}" wx:for-item="Activities">
+      <view class="row">
+        <view class='row-title'>活动主题</view>
+        <view class='row-content'>{{Activities.A_Schema}}</view>
+      </view>
+      <view class="row">
+        <view class='row-title'>活动日期</view>
+        <view class='row-content'>{{Activities.A_StartDate}}</view>
+      </view>
+      <view class="row">
+        <view class='row-title'>活动时间</view>
+        <view class='row-content'>{{Activities.A_StartTime}}</view>
+      </view>
+      <view class="row">
+        <view class='row-title'>活动地点</view>
+        <view class='row-content'>{{Activities.A_Location}}</view>  
+      </view> 
+      
+      
+      
+          
+   </view>  
+</view>

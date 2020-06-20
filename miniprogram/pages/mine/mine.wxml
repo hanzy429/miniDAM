@@ -1,2 +1,82 @@
-<!--miniprogram/pages/mine/mine.wxml-->
-<text>miniprogram/pages/mine/mine.wxml</text>
+<wxs src="../../utils/util.wxs" module="util" />
+
+<view class='user-info'>
+  <view class="img">
+    <image src='/images/user-unlogin.png'></image>
+    <image wx:if="{{userInfo.avatarUrl}}" src='{{userInfo.avatarUrl}}'></image>
+  </view>
+  <view class="nickName">
+    <view>
+      {{userInfo.nickName}}用户昵称
+    </view>
+  </view>
+
+
+
+</view>
+
+<view class="statistics-info-title">
+    活动记录
+</view>
+<view class='statistics-info'>
+
+    
+  <view class='create'>
+    <view class='title'>
+      发起
+    </view>
+    <view class='number'>
+      {{createNum}}次
+    </view>
+    <navigator class='more' url="/pages/createdActivities/createdActivities">
+      查看>
+    </navigator>
+</view>
+  <view class='participate'>
+    <view class='title'>
+      参与
+    </view>
+    <view class='number'>
+      {{participateNum}}次
+    </view>
+    <navigator class='more' url="/pages/participantActivities/participantActivities">
+      查看>
+    </navigator>
+  </view>
+
+</view>
+
+<view class="row">
+  <view class="history-serch">
+  <navigator class='' url="/pages/search/search">查找活动</navigator>
+  
+  </view>
+</view>
+  
+
+  
+
+
+
+
+<!--
+<navigator class='' url="/pages/createdActivities/createdActivities">我创建的活动</navigator>
+<navigator class='' url="/pages/participantActivities/participantActivities">我参与的活动</navigator>
+<view> ***********************</view>
+<view> 我发起的活动数量={{createNum}}</view>
+<view> 我参与的活动数量={{participateNum}}</view>
+<view> ***********************</view>
+<block>按主题搜索活动具体信息</block>
+<input placeholder="请填要搜索的主题" class="inputtext" bindinput='getTheme'/>
+<button bindtap="qurey">确认</button>
+<block wx:for="{{result1}}">
+  <view> 查询结果：</view>
+  <view> 名称：{{item.A_Schema}}</view>
+  <view> 地点：{{item.A_Location}}</view>
+</block>
+<view> ***********************</view>
+<block>按办公地点统计活动数量</block>
+<input placeholder="请填要统计的办公地点" class="inputtext" bindinput='getPosition'/>
+<button bindtap="positionButtom">确认</button>
+  <view> 该地点的活动数量={{result2}}</view>
+  -->
