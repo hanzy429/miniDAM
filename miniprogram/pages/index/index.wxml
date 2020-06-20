@@ -1,7 +1,7 @@
 <wxs src="../../utils/util.wxs" module="util" />
 
 <view class="container-top">
-   <image class='user-head' src='/images/user-unlogin.png'></image>
+   <image wx:if="{{userInfo.avatarUrl}}" class='user-head' src='{{userInfo.avatarUrl}}'></image>
    <navigator class='createActivity' url="/pages/create/create">+</navigator>
 </view>
 <view class='container-mid' >

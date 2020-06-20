@@ -3,14 +3,26 @@ const app = getApp()
 const db = wx.cloud.database()
 Page({
   data: {
-
+    userInfo:{
+      avatarUrl:" ",
+      nickName:" ",
+    }
   },
 
   onLoad: function () {
-    this.loadactivity()
-    
+    var that=this;
+    that.loadactivity()
+    wx.getUserInfo({
+      success:function(res){
+        var avatarUrl = 'userInfo.avatarUrl';
+        var nickName = 'userInfo.nickName';
+        that.setData({
+          [avatarUrl]: res.userInfo.avatarUrl,
+          [nickName]:res.userInfo.nickName,
+        })
+      }
+    })
   },
-
   loadactivity: function () {
     wx.cloud.callFunction({
       name: 'login',
