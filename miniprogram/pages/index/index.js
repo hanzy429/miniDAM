@@ -6,7 +6,8 @@ Page({
     userInfo:{
       avatarUrl:" ",
       nickName:" ",
-    }
+    },
+    peoplecount:''
   },
 
   onLoad: function () {

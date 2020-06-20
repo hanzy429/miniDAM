@@ -10,7 +10,11 @@
       <view class='act-date'>活动日期：{{Activities.A_StartDate}}</view>
       <view class='act-time'>活动时间：{{Activities.A_StartTime}}</view>
       <view class="act-location">活动地点：{{Activities.A_Location}}</view>
-   </view>  
+   </view> 
+<view class="container-act">
+      <view class="act-conut">已参加人数：{{ count }}</view> 
+   </view> 
+        
  <view class="topic">活动主题</view>
 
 <view class="detail">
