@@ -131,7 +131,12 @@ Page({
           this.setData({
             shareId:res._id
           })
-          console.log(this.data.shareId)
+          //console.log(this.data.shareId)
+          wx.showToast({
+            title: '活动创建成功！',
+            icon: 'success',
+            duration: 2000
+          })
         }
       })
   }
