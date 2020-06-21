@@ -12,7 +12,7 @@
       <view class="act-location">活动地点：{{Activities.A_Location}}</view>
    </view> 
 <view class="container-act">
-      <view class="act-conut">已参加人数：{{ count }}</view> 
+      <view class="act-conut">已参加人数：{{ peoplecount }}</view> 
    </view> 
         
  <view class="topic">活动主题</view>

@@ -48,11 +48,13 @@ Page({
     db.collection("Activities").where({
       A_Activityid: app.globalData.joinactid // 填入当前用户 openid
     }).count().then(res => {
-      console.log(res.total)
-      that.data.peoplecount = res.total+1
-      const count=that.data.peoplecount
-      console.log('ttt',count)
-
+      // console.log(res.total)
+      // that.data.peoplecount = res.total+1
+      // const count=that.data.peoplecount
+      // console.log('ttt',count)
+      that.setData({
+        peoplecount:res.total + 1
+      })
     })
   },
   addData:function(){
