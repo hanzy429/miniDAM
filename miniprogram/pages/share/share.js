@@ -58,22 +58,37 @@ Page({
     })
   },
   addData:function(){
-    db.collection('Activities').add({
-      // data 字段表示需新增的 JSON 数据
-      data: {
-        //_id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
-        A_Activityid:this.data.activities[0]._id,
-        A_Schema: this.data.activities[0].A_Schema,
-        A_Location: this.data.activities[0].A_Location,
-        A_StartDate: this.data.activities[0].A_StartDate,
-        A_StartTime: this.data.activities[0].A_StartTime,
-        A_Create: this.data.activities[0].A_Create,
-        A_Participate: app.globalData.openid
-      },
-      success: res => {
-        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
-        console.log(res)
-      }
+    if(this.data.peoplecount<this.data.activities[0].A_Peoplenum){
+      wx.showToast({
+        title: '添加成功',
+        icon: 'success',
+        duration: 2000
+      })
+      db.collection('Activities').add({
+        // data 字段表示需新增的 JSON 数据
+        data: {
+          //_id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
+          A_Activityid:this.data.activities[0]._id,
+          A_Schema: this.data.activities[0].A_Schema,
+          A_Location: this.data.activities[0].A_Location,
+          A_StartDate: this.data.activities[0].A_StartDate,
+          A_StartTime: this.data.activities[0].A_StartTime,
+          A_Create: this.data.activities[0].A_Create,
+          A_Participate: app.globalData.openid
+        },
+        success: res => {
+          // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+          console.log(res)
+        }
+      })
+      this.countpeople() 
+    }
+  else{
+    wx.showToast({
+      title: '人数已满',
+      icon: 'none',
+      duration: 2000
     })
+  }
   }
 })
