@@ -135,4 +135,14 @@ Page({
       }
     })
   },
+    /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    // 下面填写需要下拉时的函数 自己定
+    // 下拉刷新 调用onload函数
+    this.onLoad()
+    // 注意现在需要使用停止函数停止刷新
+    wx.stopPullDownRefresh()
+  },
 })
