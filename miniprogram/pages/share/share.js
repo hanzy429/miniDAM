@@ -86,7 +86,7 @@ Page({
   else{
     wx.showToast({
       title: '人数已满',
-      icon: 'none',
+      image:'/image/tanhao.png',
       duration: 2000
     })
   }

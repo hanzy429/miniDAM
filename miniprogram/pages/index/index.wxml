@@ -6,7 +6,7 @@
 </view>
 <view class='container-mid' >
    <view class='recentActivity'>我最近的日程</view>
-    <view class="container-act"wx:for="{{activities}}" wx:key="{{activities._id}}" wx:for-item="Activities">
+    <view class="container-act" wx:for="{{activities}}" wx:key="{{activities._id}}" wx:for-item="Activities">
       <view class='act-schema'>活动主题：{{Activities.A_Schema}}</view>
       <view class='act-date'>活动日期：{{Activities.A_StartDate}}</view>
       <view class='act-time'>活动时间：{{Activities.A_StartTime}}</view>

@@ -82,7 +82,7 @@ Page({
     if (this.data.theme == null){
       wx.showToast({
         title: '请填写活动主题',
-        icon: 'none',
+        image:'/images/tanhao.png',
         duration: 2000
       })
     }
