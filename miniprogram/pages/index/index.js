@@ -3,26 +3,48 @@ const app = getApp()
 const db = wx.cloud.database()
 Page({
   data: {
-    userInfo:{
-      avatarUrl:" ",
-      nickName:" ",
-    },
+    userInfo:{},
+    hasUserInfo:false,
     peoplecount:''
   },
 
   onLoad: function () {
     var that=this;
     that.loadactivity()
-    wx.getUserInfo({
-      success:function(res){
-        var avatarUrl = 'userInfo.avatarUrl';
-        var nickName = 'userInfo.nickName';
-        that.setData({
-          [avatarUrl]: res.userInfo.avatarUrl,
-          [nickName]:res.userInfo.nickName,
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse){
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
         })
       }
-    })
+    } else {
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+    }
+    // wx.getUserInfo({
+    //   success:function(res){
+    //     var avatarUrl = 'userInfo.avatarUrl';
+    //     var nickName = 'userInfo.nickName';
+    //     that.setData({
+    //       [avatarUrl]: res.userInfo.avatarUrl,
+    //       [nickName]:res.userInfo.nickName,
+    //     })
+    //   }
+    // })
+
   },
   loadactivity: function () {
     wx.cloud.callFunction({

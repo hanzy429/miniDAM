@@ -11,16 +11,39 @@ Page({
     // createNum:'10',
     // participateNum:'20',
     userInfo: {},
-    hasUserInfo: ''
+    hasUserInfo: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.init()
+    this.init();
     //this.addfunction()
     //this.qureyfunction()
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse){
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    } else {
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+    }
   },
 
   init: function (e) {
@@ -44,13 +67,13 @@ Page({
       })
     })
     console.log(this.data.participateNum)
-    app.userInfoReadyCallback = res => {
-      console.log(res)
-      this.setData({
-        userInfo: res.userInfo,
-        hasUserInfo: true
-      })
-    }
+    // app.userInfoReadyCallback = res => {
+    //   console.log(res)
+    //   this.setData({
+    //     userInfo: res.userInfo,
+    //     hasUserInfo: true
+    //   })
+    // }
     
   },
 

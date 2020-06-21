@@ -16,7 +16,7 @@ Page({
       {
         A_Participate: app.globalData.openid
       }
-    ).get().then(res => {
+    ).orderBy('A_StartDate', 'asc').orderBy('A_StartTime','asc').get().then(res => {
       console.log("查询结果")
       console.log(res)
       this.setData({

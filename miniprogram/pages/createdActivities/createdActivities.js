@@ -15,7 +15,7 @@ Page({
       {
         A_Create: app.globalData.openid
       }
-    ).get().then(res => {
+    ).orderBy('A_StartDate', 'asc').orderBy('A_StartTime','asc').get().then(res => {
       this.setData({
         result: res.data
       })

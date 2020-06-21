@@ -2,12 +2,12 @@
 
 <view class='user-info'>
   <view class="img">
-    <image src='/images/user-unlogin.png'></image>
-    <image wx:if="{{userInfo.avatarUrl}}" src='{{userInfo.avatarUrl}}'></image>
+    <!-- <image src='/images/user-unlogin.png'></image> -->
+    <image wx:if="{{userInfo.avatarUrl}}" class='user-head' src='{{userInfo.avatarUrl}}'></image>
   </view>
   <view class="nickName">
     <view>
-      {{userInfo.nickName}}用户昵称
+      {{userInfo.nickName}}
     </view>
   </view>
 
