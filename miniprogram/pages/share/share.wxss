@@ -1,7 +1,10 @@
 /* pages/share/share.wxss */
 .header{
-  margin-left:10rpx;
-  margin-top: 10rpx; 
+
+}
+.nav{
+  text-align: center;
+  margin: 20rpx 0
 }
 .header-details{
   display: inline;
@@ -54,4 +57,19 @@
   background-color: #00b26a;
   line-height: 70rpx;
   font-size: 36rpx;
+}
+.act{
+  border-bottom:solid 1px #eeeeee; 
+  margin: 15rpx 0 15rpx 30rpx;
+  width: auto
+}
+.act-conut{
+  text-align: center;
+  margin-top: 20px;
+}
+.container{
+  box-shadow: 0 2rpx 12rpx 0 rgba(0,0,0,.1);
+  border: 1rpx #eeeeee solid;
+  width: 80%;
+  margin: 10rpx auto
 }
