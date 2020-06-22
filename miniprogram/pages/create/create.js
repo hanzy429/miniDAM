@@ -89,28 +89,28 @@ Page({
     else if (this.data.num == null){
       wx.showToast({
         title: '请填写活动人数上限',
-        icon: 'none',
+        image:'/images/tanhao.png',
         duration: 2000
       })
     }
     else if (this.data.location == null){
       wx.showToast({
         title: '请填写活动地点',
-        icon: 'none',
+        image:'/images/tanhao.png',
         duration: 2000
       })
     }
     else if (this.data.date == ''){
       wx.showToast({
         title: '请选择活动日期',
-        icon: 'none',
+        image:'/images/tanhao.png',
         duration: 2000
       })
     }
     else if (this.data.time == ''){
       wx.showToast({
         title: '请选择活动时间',
-        icon: 'none',
+        image:'/images/tanhao.png',
         duration: 2000
       })
     }

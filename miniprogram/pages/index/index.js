@@ -76,7 +76,6 @@ Page({
       A_StartDate: _.gte(now),
     }).orderBy('A_StartDate', 'asc').orderBy('A_StartTime','asc').get().then(res => {
       const activities = res.data;
-      console.log(activities);
       that.setData({
         activities: activities
       })
