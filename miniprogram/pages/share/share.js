@@ -27,7 +27,7 @@ Page({
         app.globalData.openid = res.result.openid
         console.log('tt', app.globalData.openid)
         this.countpeople()  
-              
+        this.isJoint() 
         this.read()
       }
     })
@@ -88,7 +88,7 @@ Page({
     })
   },
   addData:function(){
-    this.isJoint()
+ 
     if(this.data.isjoin){
       wx.showToast({
         title: '你已参加该活动',
@@ -121,6 +121,7 @@ Page({
             }
           })
           this.countpeople() 
+          this.isJoint()
         }
       else{
         wx.showToast({
