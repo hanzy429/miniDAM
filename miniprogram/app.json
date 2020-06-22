@@ -1,5 +1,6 @@
 {
   "pages": [
+    
     "pages/index/index",
     "pages/calendar/calendar",
     "pages/mine/mine",
@@ -14,7 +15,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#41be57",
-    "navigationBarTitleText": "日常活动管理",
+    "navigationBarTitleText": "集体活动管理",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
