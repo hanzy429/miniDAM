@@ -49,8 +49,6 @@ Page({
   isJoint:function(){
     const that = this;
     const _ = db.command;
-    console.log('1',app.globalData.openid);
-    console.log('2',app.globalData.joinactid);
     db.collection("Activities").where(_.or([
       {
         A_Create: app.globalData.openid,
@@ -64,12 +62,10 @@ Page({
       that.setData({
         join:res.total
       })
-      console.log(that.data.join)
       if(that.data.join!=0){
         that.setData({
           isjoin:true
         })
-        console.log(that.data.isjoin)
       }
     })
   },

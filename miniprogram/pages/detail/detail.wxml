@@ -1,9 +1,11 @@
 <view class='container-top' >
-   <view class='ActivityOnSDate'>{{year}}年{{month}}月{{dateNum}}号的活动安排</view>
-    <view class="container-act"wx:for="{{activities}}" wx:key="{{activities._id}}" wx:for-item="Activities">
+   <view class='ActivityOnSDate'>{{year}}年{{month}}月{{dateNum}}号</view>
+    <view class="container-act"wx:for="{{activities}}" wx:key="{{activities._id}}" wx:for-item="Activities" hidden="{{isActShowHide}}">
       <view class='act-schema'>活动主题：{{Activities.A_Schema}}</view>
       <view class='act-date'>活动日期：{{Activities.A_StartDate}}</view>
       <view class='act-time'>活动时间：{{Activities.A_StartTime}}</view>
       <view class="act-location">活动地点：{{Activities.A_Location}}</view>
-   </view>  
+   </view>
+   <view class="NoActivities" hidden="{{hasAct}}">暂无活动安排</view>
+   <button class="createAct"  bindtap="goToCreate" >添加活动</button>  
 </view>

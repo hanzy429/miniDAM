@@ -3,6 +3,9 @@ const db = wx.cloud.database()
 
 Page({
   data: {
+    isActShowHide:false,
+    hasAct:true,
+    Date:""
   },
 
 
@@ -24,17 +27,34 @@ Page({
     var year = that.data.year;
     var y=year.toString();
     var specificDate=y+"-"+m+"-"+d;
+    wx.setStorageSync('Date', specificDate);
+    that.setData({
+      Date:specificDate
+    })
     //console.log(month); 
     db.collection("Activities").where({
-      A_StartDate: specificDate,
+      A_StartDate: that.data.Date,
       A_Participate: app.globalData.openid
-    }).get().then(res => {
+    }).orderBy('A_StartTime','asc').get().then(res => {
       const activities = res.data;
       that.setData({
         activities: activities
       })
       console.log(activities);
+      //console.log(that.data.activities.length);
+      if(that.data.activities.length==0){
+        that.setData({
+          isActShowHide:true,
+          hasAct:false
+        })
+      }
     })
 
   },
+  goToCreate:function(){
+    console.log(this.data.Date);
+    wx.navigateTo({
+      url: '/pages/createOnDate/createOnDate',
+    })
+  }
 })

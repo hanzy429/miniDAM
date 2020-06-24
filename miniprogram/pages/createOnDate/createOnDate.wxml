@@ -1,0 +1,38 @@
+<view class="container-top">
+  <image class='back' src='/images/back.png' bindtap='backToIndex'></image>
+  <image class='user-head' src='/images/user-unlogin.png'></image>
+</view>
+<view class ="content">
+ <view class = "content-wrap" style="margin-top:20rpx;">
+    <view>活动主题</view>
+    <input placeholder="请填写活动主题" class="inputtext" bindinput='getTheme'/>
+  </view>
+  <view class = "content-wrap">
+    <view>活动人数上限</view>
+    <input type="number" placeholder="请填写阿拉伯数字" class="inputtext" bindinput='getPeopleNum'/>
+  </view>
+   <view class = "content-wrap">
+    <view>活动地点</view>
+    <input placeholder="请填写活动地点" class="inputtext" bindinput='getLocation'/>
+  </view>
+  <!-- <view class = "content-wrap">
+    <view>活动日期</view>
+    <picker mode="date" value="{{date}}" start="" end="2099-12-31" bindchange="bindDateChange">
+      <image class='map' src='/images/choose.png' hidden="{{isAHidden}}" bindtap='yincangtupian1'></image>
+      <view class="picker" hidden="{{isBHidden}}">
+      当前选择日期: {{date}}
+      </view>
+    </picker>
+  </view> -->
+ <view class = "content-wrap">
+    <view>活动时间</view>
+    <picker mode="time" value="{{time}}" start="00:01" end="24:00" bindchange="bindTimeChange">
+       <image class='map' src='/images/choose.png' hidden="{{isCHidden}}" bindtap='yincangtupian2'></image>
+       <view class="picker" hidden="{{isDHidden}}">
+         当前选择时间: {{time}}
+       </view>
+    </picker>
+  </view>
+</view>
+<button class="submit"  bindtap="addData" >确认</button>
+<button class="submit"  open-type="share">分享</button>

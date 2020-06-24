@@ -1,4 +1,3 @@
-// miniprogram/pages/create/create.js
 const app = getApp()
 const db = wx.cloud.database()
 Page({
@@ -16,6 +15,15 @@ Page({
       isDHidden:true,
       isEHidden:false,
       isFHidden:true
+  },
+  onLoad:function(option){
+    var speDate = wx.getStorageSync('Date');
+    wx.removeStorage({
+      key: 'Date',
+    })
+    this.setData({
+      date:speDate
+    })
   },
   backToIndex:function(option){
     wx.switchTab({
